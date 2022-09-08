@@ -1,0 +1,37 @@
+:host .radio {
+  display: block;
+  width: 19px;
+  height: 19px;
+  position: relative;
+  cursor: pointer;
+  margin-left: 7px;
+
+  input {
+    display: none;
+
+    &:checked ~ .check-mark:after {
+      background: var(--blue);
+    }
+  }
+
+  .check-mark {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border: 2px solid var(--gray);
+    border-radius: 50%;
+
+    &:after {
+      content: "";
+      position: absolute;
+      background: var(--gray);
+      transition: background 0.4s ease-in-out;
+      border: 2px solid var(--gray);
+      top: calc(50% - 5.5px);
+      left: calc(50% - 5.5px);
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+.add-file {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  align-items: flex-end;
+
+  .header {
+    display: flex;
+    float: right;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .up {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap-reverse;
+    height: 80%;
+    width: 100%;
+  }
+
+  .down {
+    display: flex;
+    width: 40%;
+
+    button {
+      margin: 10px;
+      padding: 10px;
+    }
+
+    :last-child {
+      color: var(--blue);
+      background-color: var(--white);
+      border: 1px solid;
+      border-color: var(--blue);
+    }
+  }
+}

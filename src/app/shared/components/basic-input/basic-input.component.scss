@@ -1,0 +1,56 @@
+.basic-input {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  padding: 1vh 0vw;
+
+  .row {
+    label {
+      color: var(--gray);
+      font-size: 18px;
+      margin-bottom: 7px;
+      position: relative;
+      top: 3.5vh;
+      left: 70%;
+    }
+
+
+    .required {
+      font-size: 16px;
+      color: var(--pink);
+    }
+
+    &.focus {
+      background-color: var(--white);
+
+      label {
+        color: var(--blue);
+        background-color: var(--white);
+        font-size: 14px;
+        top: 1vh;
+        left: 70%;
+      }
+
+      .required {
+        color: var(--pink);
+      }
+    }
+  }
+
+  input {
+    font-size: 25px;
+    border-radius: 8px;
+    border-color: var(--gray);
+    border: 1px solid;
+    direction: rtl;
+    padding: 6px;
+
+    &.disabled {
+      color: #D6D7DD;
+    }
+  }
+
+  :focus {
+    border-color: var(--blue);
+  }
+}

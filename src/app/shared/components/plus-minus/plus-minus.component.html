@@ -1,0 +1,15 @@
+<div class="plus-minus">
+  <div class="plus-minus-num-area">
+    <div class="number">
+      <span class="digit">{{ value }}</span>
+    </div>
+
+    <div class="plus-minus">
+      <span (click)="changeNumber(true)">^</span>
+      <span class="dwon"
+        (click)="changeNumber(false)">^</span>
+    </div>
+  </div>
+
+  <span class="lable">{{ lable }}</span>
+</div>
