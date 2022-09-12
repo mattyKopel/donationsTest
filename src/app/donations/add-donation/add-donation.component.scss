@@ -15,9 +15,25 @@
   .up {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap-reverse;
     height: 80%;
     width: 100%;
+
+    .inner-row {
+      display: flex;
+      flex-direction: row-reverse;
+
+      &.last {
+        justify-content: flex-start;
+      }
+
+      &.in {
+        flex-direction: column-reverse;
+
+        basic-input div {
+          padding: 0;
+        }
+      }
+    }
   }
 
   .down {
@@ -34,6 +50,10 @@
       background-color: var(--white);
       border: 1px solid;
       border-color: var(--blue);
+    }
+
+    &.in {
+      padding-top: 3vh;
     }
   }
 }

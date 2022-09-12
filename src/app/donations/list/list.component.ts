@@ -1,6 +1,8 @@
+import { Donation } from './../../shared/models/donation';
+import { AddDonationComponent } from './../add-donation/add-donation.component';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatDialog, MatDialogConfig, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
-import { AddFileComponent } from '../add-file/add-file.component';
+import { FormArray, FormControl } from '@angular/forms';
 
 
 @Component({
@@ -11,21 +13,25 @@ import { AddFileComponent } from '../add-file/add-file.component';
 })
 export class ListComponent implements OnInit {
 
+  listDonations = new FormArray([]);
+
   constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
-  newFile(): void {
+  newDonation(): void {
     const dialogConfig: MatDialogConfig = {
-      width: '55vw',
-      height: '60vh',
+      width: '45vw',
+      height: '50vh',
     };
 
-    this.dialog.open(AddFileComponent, dialogConfig).afterClosed().subscribe(data => {
-      this.addFile();
+    this.dialog.open(AddDonationComponent, dialogConfig).afterClosed().subscribe(data => {
+      this.addDonation(data);
     });
   }
-  addFile(): void {
+
+  addDonation(data: Donation): void {
+    this.listDonations.push(new FormControl(data));
   }
 }

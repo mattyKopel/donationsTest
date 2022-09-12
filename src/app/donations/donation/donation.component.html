@@ -1,0 +1,24 @@
+<div [formGroup]="donationForm"
+  class="donation"
+  [class.expanded]="donationForm?.value?.expand === true">
+  <div class="donation-row"
+    [class.option-expanded]="donationForm?.value?.expand"
+    (click)="donationForm.get('expand').setValue(!donationForm.value.expand)">
+    {{donationForm.get('expand').value}}
+    <div class="start">
+      <span>{{ donationForm?.get('entityName')?.value}}</span>
+      <span>{{ donationForm?.get('donationAmount')?.value }}</span>
+      <span>{{ donationForm?.get('currencyType')?.value }}</span>
+    </div>
+    <!--expand.emit() &&  -->
+    <div class="end">
+      <span class="roundedArrow">^</span>
+    </div>
+  </div>
+
+  <div class="card"
+    *ngIf="donationForm?.value?.expand === true">
+    <app-add-donation [donation]="donationForm?.value"></app-add-donation>
+
+  </div>
+</div>

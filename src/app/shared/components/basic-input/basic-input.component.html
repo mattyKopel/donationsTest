@@ -1,10 +1,10 @@
 <div class="basic-input">
   <div class="row"
-    [class.focus]="focusInput">
+    [class.focus]="focusInput || (control.touched && control.value !== '')">
+    <label>{{ label }}</label>
+
     <label *ngIf="required"
       class="required"> * </label>
-
-    <label>{{label}}</label>
   </div>
 
   <input #inputRef
@@ -12,9 +12,14 @@
     [formControl]="control"
     [class.invalid]="control.touched && control.invalid"
     [class.disabled]="disabled"
+    [class.narrow]="narrow"
+    [class.no-placeholder]="control.value !== ''"
     (keyup.enter)="enter.emit()"
     (focus)="focusInput = true"
     (focusout)="focusInput = false && focusout.emit()">
 
-  <ng-content></ng-content>
+  <div class="error"  *ngIf="control.touched && control.errors">
+    <span>{{control.errors?.isNumber}}</span>
+    <span>{{control.errors?.required}}</span>
+  </div>
 </div>

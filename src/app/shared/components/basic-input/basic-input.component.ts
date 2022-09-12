@@ -12,9 +12,11 @@ export class BasicInputComponent implements OnInit, OnChanges, AfterViewInit {
   @Input() label: string;
   @Input() type: string = 'text';
   @Input() control: FormControl = new FormControl('');
+  @Input() placeholder: string;
   @Input() isSelect?: boolean;
   @Input() disabled?: boolean;
   @Input() required?: boolean;
+  @Input() narrow?: boolean;
 
   @Output() enter: EventEmitter<void> = new EventEmitter();
   @Output() focusout: EventEmitter<void> = new EventEmitter();

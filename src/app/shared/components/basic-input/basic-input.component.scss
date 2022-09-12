@@ -1,19 +1,22 @@
 .basic-input {
   display: flex;
   flex-direction: column;
-  width: 90%;
+  box-sizing: initial;
+  width: 100%;
   padding: 1vh 0vw;
+  direction: rtl;
 
   .row {
+    width: fit-content;
+
     label {
       color: var(--gray);
-      font-size: 18px;
+      font-size: small;
       margin-bottom: 7px;
       position: relative;
-      top: 3.5vh;
-      left: 70%;
+      top: 3vh;
+      right: 10px;
     }
-
 
     .required {
       font-size: 16px;
@@ -26,9 +29,9 @@
       label {
         color: var(--blue);
         background-color: var(--white);
-        font-size: 14px;
+        font-size: 12px;
         top: 1vh;
-        left: 70%;
+        right: 5px;
       }
 
       .required {
@@ -38,7 +41,7 @@
   }
 
   input {
-    font-size: 25px;
+    font-size: 18px;
     border-radius: 8px;
     border-color: var(--gray);
     border: 1px solid;
@@ -48,9 +51,39 @@
     &.disabled {
       color: #D6D7DD;
     }
+
+    &.invalid {
+      border-color: var(--pink);
+    }
+
+    &.narrow {
+      width: 90%;
+    }
+
+    &.no-placeholder {
+      &::placeholder {
+        color: var(--white);
+        display: none;
+      }
+    }
+  }
+
+  input::placeholder {
+    color: var(--gray);
+    font-size: small;
+
+    &:focus {
+      color: var(--white);
+      display: none;
+    }
   }
 
   :focus {
     border-color: var(--blue);
+  }
+
+  .error {
+    color: var(--pink);
+    font-size: 10px;
   }
 }

@@ -1,0 +1,58 @@
+.donation {
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 2vh 1vw;
+  width: 35vw;
+  direction: rtl;
+  margin: 1vh 0;
+
+  .donation-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-radius: 6px;
+    font-weight: 800;
+    cursor: pointer;
+
+    .start {
+      width: 20%;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .end {
+      width: 20%;
+      display: flex;
+      justify-content: space-around;
+
+      .roundedArrow {
+        position: relative;
+        height: 0.55em;
+        width: 0.55em;
+        transition: .4s ease-in-out;
+      }
+    }
+  }
+
+  &.expanded {
+    display: flex;
+    flex-direction: column;
+    padding: inherit;
+    height: 65vh;
+    border-color: var(--blue);
+    box-shadow: 0px 0px 31px rgba(206, 205, 215, 0.88);
+    border-radius: 6px;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+
+    .donation-row {
+      position: relative;
+      padding: 2vh 2vw;
+      background:  var(--ligthBlue);
+    }
+  }
+
+  .card {
+    padding: 2vh 1vw;
+  }
+}

@@ -10,14 +10,12 @@ button {
     background-color: var(--blue);
     border: 0;
     border-radius: 25px;
-    // box-shadow: 0px 0px 24px 0px rgba(244, 0, 88, 0.29);
     outline: 0;
     transition: all 0.1s linear;
     cursor: pointer;
 
     &.white {
       background-color: var(--white);
-      // box-shadow: 0px 0px 24px 0px rgb(255, 192, 0, .29);
     }
 
     &:disabled {

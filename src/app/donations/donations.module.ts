@@ -1,15 +1,15 @@
-import { FilesRoutingModule } from './files-routing.module';
-import { SharedModule } from './../shared/shared.module';
+import { DonationsRoutingModule } from './donations-routing.module';
+import { SharedModule } from '../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { ListComponent } from './list/list.component';
-import { AddFileComponent } from './add-file/add-file.component';
-import { FileComponent } from './file/file.component';
+import { AddDonationComponent } from './add-donation/add-donation.component';
+import { DonationComponent } from './donation/donation.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const components = [
   ListComponent,
-  AddFileComponent,
-  FileComponent,
+  AddDonationComponent,
+  DonationComponent,
   PageNotFoundComponent
 ];
 
@@ -19,7 +19,7 @@ const components = [
   ],
   imports: [
     SharedModule,
-    FilesRoutingModule
+    DonationsRoutingModule
   ]
 })
 export class FilesModule { }

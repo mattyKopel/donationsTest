@@ -1,0 +1,15 @@
+<div class="list">
+  <div class="donations-list">
+    <div *ngFor="let donation of listDonations?.value">
+      <app-donation
+        [donation]="donation"
+        (expand)="donation.expand = !donation.expand">
+      </app-donation>
+    </div>
+  </div>
+<!-- *ngIf="!donation.expand" -->
+  <div class="button-area">
+    <button class="basic"
+      (click)="newDonation()">הוספת תרומה</button>
+  </div>
+</div>

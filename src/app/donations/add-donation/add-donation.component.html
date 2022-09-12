@@ -1,0 +1,62 @@
+<form class="add-file" [formGroup]="form">
+  <span *ngIf="dialogRef" class="header">{{ 'הוספת דיווח על עמותה' }}</span>
+
+  <div class="up">
+    <div class="inner-row"
+      [class.in]="!dialogRef">
+      <basic-input [label]="'שם הישות המדינית הזרה'"
+        [placeholder]="'שם הישות המדינית הזרה'"
+        [control]="form.get('entityName')"
+        [required]="true"
+        [narrow]="true"></basic-input>
+
+      <basic-input [label]="'סכום התרומה בשח'"
+        [placeholder]="'סכום התרומה בשח'"
+        [control]="form.get('donationAmount')"
+        [required]="true"
+        [narrow]="true"></basic-input>
+
+      <basic-input [label]="'סוג הישות המדינית הזרה'"
+        [placeholder]="'סוג הישות המדינית הזרה'"
+        [control]="form.get('entityType')"
+        [required]="true"
+        [narrow]="true"></basic-input>
+    </div>
+
+    <basic-input [label]="'יעוד התרומה'"
+      [placeholder]="'יעוד התרומה'"
+      [control]="form.get('donationPurpose')"
+      [required]="true"
+      [narrow]="!dialogRef"></basic-input>
+
+    <basic-input [label]="'תנאים לתרומה'"
+      [placeholder]="'תנאים לתרומה'"
+      [control]="form.get('donationConditions')"
+      [narrow]="!dialogRef"></basic-input>
+
+    <div class="inner-row last"
+      [class.in]="!dialogRef">
+      <basic-input [label]="'סוג המטבע'"
+        [placeholder]="'סוג המטבע'"
+        [control]="form.get('currencyType')"
+        [required]="true"
+        [narrow]="true"></basic-input>
+
+      <basic-input [label]="'שער ההמרה'"
+        [placeholder]="'שער ההמרה'"
+        [control]="form.get('conversionRate')"
+        [required]="true"
+        [narrow]="true"></basic-input>
+    </div>
+  </div>
+
+  <div class="down"
+    [class.in]="!dialogRef">
+    <button class="basic"
+    (click)="save()">שמירה</button>
+    <!-- [disabled]="form.invalid" -->
+
+    <button class="basic"
+      (click)="reset()">ניקוי</button>
+  </div>
+</form>
